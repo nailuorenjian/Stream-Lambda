@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Main4 {
     public static void main(String[] args) {
@@ -38,6 +39,10 @@ public class Main4 {
         System.out.println("匹配条件");
         boolean allMatch = list.stream().allMatch(e ->e.getAge() > 1);
         System.out.println(allMatch);
+
+        //list.stream().max(Comparator.comparingInt(UserBean::getAge)).map(UserBean::getAge);
+        list.stream().max(Comparator.comparingInt(UserBean::getAge));
+        list.stream().forEach(System.out::println);
     }
 
 
